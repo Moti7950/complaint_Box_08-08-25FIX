@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<link rel="stylesheet" href="./style.css">
-<body>
+  </head>
+  <link rel="stylesheet" href="./style.css" />
+  <body>
     <main>
-        <!-- titel explen what this web do -->
-        <h1>This page for complinin solider</h1>
-        <!-- buten hipper ander page -->
-         <button></button>
-         <!-- new selectin for admin connect -->
+      <!-- titel explen what this web do -->
+      <h1>This page for complinin solider</h1>
+      <!-- buten hipper ander page -->
+      <section class="coplining_link">
+        <label for="coplining_button">for coplining:</label>
+        <button id="coplining_button">please enter on me</button>
+      </section>
+      <!-- new selectin for admin connect -->
+      <form action="http://localhost:7895/user/readComplaints" method="get">
+        <section class="admin_login">
+          <h2>Admin login</h2>
+
+          <label for="user_name">user name:</label>
+          <input id="user_name" name="username" type="text" />
+
+          <label for="password">password:</label>
+          <input id="password" name="password" type="password" />
+
+          <button id="submit_button" type="submit">submit</button>
+        </section>
+      </form>
     </main>
-</body>
+  </body>
 </html>
