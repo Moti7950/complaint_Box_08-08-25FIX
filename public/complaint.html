@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<link rel="stylesheet" href="./style.css">
-<body>
-    
-</body>
+  </head>
+  <link rel="stylesheet" href="./style.css" />
+  <body>
+    <form action="http://localhost:7895/complaint/newComplaint" method="post">
+      <h2>Choose a category:</h2>
+
+      <label> <input type="radio" name="category" value="food" /> Food </label
+      ><br />
+      <label> <input type="radio" name="category" value="equipment" /> Equipment </label
+      ><br />
+      <label> <input type="radio" name="category" value="Commands" /> Commands </label
+      ><br />
+      <label> <input type="radio" name="category" value="other" /> Other </label
+      ><br />
+
+      <h2>Complaint description:</h2>
+      <textarea name="TypeOfComplaint" rows="4" cols="40" required></textarea
+      ><br /><br />
+
+      <button type="submit">submit</button>
+    </form>
+  </body>
 </html>

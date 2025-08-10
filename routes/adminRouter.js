@@ -1,4 +1,5 @@
 import express from "express";
+import {getAllComplaints} from "./utilsFunction.js"
 
 const adminRouter = express.Router()
 
@@ -25,33 +26,3 @@ adminRouter.get("/readComplaints",authMiddleware, async (req, res) => {
 })
 
 export default adminRouter;
-
-
-// new page
-
-import { MongoClient } from "mongodb";
-
-const mongoServer = new MongoClient(process.env.MONGO_URL)
-console.log(process.env.MONGO_URL);
-
-async function getAllComplaints() 
-{
-    await mongoServer.connect();
-    try
-    {
-        const DBname = mongoServer.db("complaints_DB")
-        const DBTablename = DBname.collection("complaints")
-        const result = await DBTablename.find().toArray()
-        console.log(result);
-        return result;
-    }
-    catch(err)
-    {
-        console.error("MongoDb error:", err.message);
-        console.error(err)
-           return [];
-    }
-    finally {
-        await mongoServer.close()
-    }
-}

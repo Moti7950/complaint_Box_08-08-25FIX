@@ -7,7 +7,9 @@ complaintRouter.post("/newComplaint", async (req,res) => {
     {
         console.log("Hi from newComplaint!");
         console.log("Received body", req.body);
-        await createNewComplaint(req.body)
+        const {category,TypeOfComplaint} =req.body
+        const tempData = newComplainTemplit(category,TypeOfComplaint)
+        await createNewComplaint(tempData)
         res.status(200).json({message: "Success to writa a new complaint"})
     }
     catch(err)
@@ -17,11 +19,3 @@ complaintRouter.post("/newComplaint", async (req,res) => {
 })
 
 export default complaintRouter;
-
-
-// new page 
-
-async function createNewComplaint()
-{
-    console.log("Hi");
-}
